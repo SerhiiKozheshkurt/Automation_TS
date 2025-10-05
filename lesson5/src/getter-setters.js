@@ -25,13 +25,13 @@ const userProfile = {
         return this._age;
     },
 
-    // set age(value) {
-    //     if (typeof value === 'number' && value > 0) {
-    //         this._age = value;
-    //     } else {
-    //         console.error('Вік має бути додатним числом');
-    //     }
-    // },
+    set age(value) {
+        if (typeof value === 'number' && value > 0) {
+            this._age = value;
+        } else {
+            console.error('Вік має бути додатним числом');
+        }
+    },
 
     // Метод для виведення короткої інформації про користувача
     getSummary() {
@@ -43,6 +43,5 @@ const userProfile = {
 console.log(userProfile.getSummary()); // Користувач: Іван Петренко, Вік: 30 років.
 userProfile.fullName = 'Тарас Шевченко';
 userProfile.age = 35;
-console.log(userProfile.getSummary()); // Користувач: Тарас Шевченко, Вік: 35 років.(якщо розкоментувати
-//строки з 28 по 34, в інакшому випадку - помилка 'Cannot set property age of #<Object> which has only a getter')
+console.log(userProfile.getSummary()); // Користувач: Тарас Шевченко, Вік: 35 років.
 
