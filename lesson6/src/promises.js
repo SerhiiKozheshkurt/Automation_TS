@@ -17,10 +17,6 @@ function getData() {
         .then(response => {
             console.log(response, response.status, response.statusText);
             return response.json();
-        })
-        .then(json => printItemsCount(json))
-        .catch(error => {
-            console.log('Сталася помилка:', error);
         });
 }
 
@@ -31,4 +27,9 @@ function printItemsCount(json) {
 }
 
 
-getData();
+getData()
+    .then(printItemsCount)
+    .catch(error => {
+        console.log('Сталася помилка:', error);
+    });
+
